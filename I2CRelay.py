@@ -1,8 +1,4 @@
 from smbus2 import SMBus, i2c_msg
-import struct
-
-
-
 
 def turn_on_valve(address):
     command = 1;
