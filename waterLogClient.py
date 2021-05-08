@@ -13,7 +13,7 @@ _baseURL = "https://waterlog-311815.uc.r.appspot.com"
 
 def helloWorld():
     url = _baseURL + "?key=" + get_http_key()
-    return requests.get(f"{_baseURL}?key={get_http_key()}").content
+    return requests.get(url).content
 
 
 def addReading(sensorAddress, reading, eventType = MOISTURE_SENSOR_READING):
