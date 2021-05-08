@@ -12,6 +12,7 @@ STOP_SYSTEM_EVENT = "stop"
 _baseURL = "https://waterlog-311815.uc.r.appspot.com"
 
 def helloWorld():
+    url = _baseURL + "?key=" + get_http_key()
     return requests.get(f"{_baseURL}?key={get_http_key()}").content
 
 
@@ -77,7 +78,7 @@ def get_http_key():
 
 
 def get_url(route):
-    return f"{_baseURL}/{route}?key={get_http_key()}"
+    return _baseURL + "/" + route + "?key=" + get_http_key()
 
 
 def uploadSettings():
