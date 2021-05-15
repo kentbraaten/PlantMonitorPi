@@ -2,5 +2,11 @@ import podMonitor
 import pots
 import waterLogClient
 
-waterLogClient.addSystemEvent(waterLogClient.START_SYSTEM_EVENT)
+def logStart():
+    try:
+        waterLogClient.addSystemEvent(waterLogClient.START_SYSTEM_EVENT)
+    except:
+        pass
+
+logStart()
 podMonitor.monitorPots(waterLogClient.getSettings())
