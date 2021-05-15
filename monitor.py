@@ -1,6 +1,7 @@
 import podMonitor
 import pots
 import waterLogClient
+from time import sleep
 
 def logStart():
     try:
@@ -8,5 +9,6 @@ def logStart():
     except:
         pass
 
+sleep(900)
 logStart()
 podMonitor.monitorPots(waterLogClient.getSettings())
