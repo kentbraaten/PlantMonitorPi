@@ -16,9 +16,9 @@ def monitorPots(potsToMonitor):
 
 
 def waterPotsIfNeeded(potsToWater):
+    readings = getMoistureSensorReadings(potsToWater)
+    logReadings(readings)
     for x in range(0,maxCycles):
-        readings = getMoistureSensorReadings(potsToWater)
-        logReadings(readings)
         potsToWater = getPotsThatNeedWatering(readings, isBelowLowerRange)
         if (len(potsToWater) == 0):
             break
@@ -26,6 +26,7 @@ def waterPotsIfNeeded(potsToWater):
         logWaterEvents(potsToWater)
         if x < maxCycles - 1:
             sleep(22)
+            readings = getMoistureSensorReadings(potsToWater)
 
 
 def waterPots(potsToWater):
