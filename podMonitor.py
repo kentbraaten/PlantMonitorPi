@@ -2,7 +2,7 @@ from time import sleep
 from pots import toMoistureSensorParams, toMoistureRange, toRelayParams, potInfo
 from I2CFuncs import getSensorReading, turnOnValve
 from waterLogClient import addAction, addReading, normalizeReading, MOISTURE_SENSOR_READING_NORMALIZED, MOISTURE_SENSOR_READING_RAW
-from datetime import *
+import datetime
 
 
 maxCycles = 4
