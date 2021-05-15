@@ -9,6 +9,7 @@ maxCycles = 4
 
 
 def monitorPots(potsToMonitor):
+    time.sleep(find_time_delta_to_15())
     while True:
         waterPotsIfNeeded(potsToMonitor)
         time.sleep(find_time_delta_to_15())
@@ -21,8 +22,8 @@ def waterPotsIfNeeded(potsToWater):
         potsToWater = getPotsThatNeedWatering(readings, isBelowLowerRange)
         if (len(potsToWater) == 0):
             break
-        logPotsBeingWatered(potsToWater)
         waterPots(potsToWater)
+        logWaterEvents(potsToWater)
         if x < maxCycles - 1:
             time.sleep(22)
 
@@ -61,23 +62,28 @@ def isBelowUpperRange(readingTuple):
 
 
 def logReadings(readings):
-    for reading in readings:
-        logReading(reading)
+    try:
+        for reading in readings:
+            logReading(reading)
+    except:
+        pass
 
 
 def logReading(reading):
     sensorAddress = toMoistureSensorParams((reading[0]))
     rawReading = reading[1]
+    addReading(sensorAddress,rawReading, MOISTURE_SENSOR_READING_RAW)
+    addReading(sensorAddress,normalizeReading(rawReading),MOISTURE_SENSOR_READING_NORMALIZED)
+
+
+
+def logWaterEvents(pots):
     try:
-        addReading(sensorAddress,rawReading, MOISTURE_SENSOR_READING_RAW)
-        addReading(sensorAddress,normalizeReading(rawReading),MOISTURE_SENSOR_READING_NORMALIZED)
+        for p in pots:
+            relayParams = toRelayParams(p)
+            addAction(relayParams)
     except:
         pass
-
-def logPotsBeingWatered(pots):
-    print("The following pots will be watered")
-    for p in pots:
-        print(potInfo(p))
 
     
 def find_time_delta_to_15():

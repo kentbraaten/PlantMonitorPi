@@ -1,4 +1,6 @@
 import podMonitor
 import pots
+import waterLogClient
 
-podMonitor.monitorPots(pots.listOfPots)
+waterLogClient.addSystemEvent(waterLogClient.START_SYSTEM_EVENT)
+podMonitor.monitorPots(waterLogClient.getSettings())
