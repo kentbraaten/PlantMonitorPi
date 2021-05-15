@@ -2,10 +2,14 @@ import requests
 import json
 from datetime import datetime
 
-MOISTURE_SENSOR_READING = "msr"
+MOISTURE_SENSOR_READING_RAW = "raw-msr"
+MOISTURE_SENSOR_READING_NORMALIZED = "nrm-msr"
 OPEN_SOLINOID_ACTION = "os"
 START_SYSTEM_EVENT = "start"
 STOP_SYSTEM_EVENT = "stop"
+MIN_READING = 240
+MAX_READING = 600
+MAX_ADJUSTED_READING = MAX_READING - MIN_READING
 
 
 
@@ -16,7 +20,7 @@ def helloWorld():
     return requests.get(url).content
 
 
-def addReading(sensorAddress, reading, eventType = MOISTURE_SENSOR_READING):
+def addReading(sensorAddress, reading, eventType = MOISTURE_SENSOR_READING_RAW):
     i2CAddress, pin = sensorAddress
     data = {
         "reading": reading,
@@ -143,7 +147,5 @@ def _splitPropNameIdx(prop):
     return (prop[0:len(prop) - 1], prop[len(prop)-1: len(prop)])
 
 
-
-
- #   return [(pot, getSensorReading(toMoistureSensorParams(pot)))
- #                   for pot in potsToWater]
+def normalizeReading(rawReading):
+    return round(100 - ((( rawReading - MIN_READING) / MAX_ADJUSTED_READING) * 100))
