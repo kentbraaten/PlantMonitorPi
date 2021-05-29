@@ -17,12 +17,14 @@ def logStart():
 
 def monitorPots():
     sleep(num_seconds_to_next_time_delta(15))
-    try:
-        while True:
+    while True:
+        try:
             podMonitor.waterPotsIfNeeded(getSettingsForPots())
-            sleep(num_seconds_to_next_time_delta(15))
-    except Exception as e:
-        writeError(e)
+        except Exception as e:
+            writeError(e)
+            waterLogClient.addSystemEvent(waterLogClient.ERROR_SYSTEM_EVENT)
+        sleep(num_seconds_to_next_time_delta(15))
+        
 
     
 def getSettingsForPots():
