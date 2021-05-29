@@ -6,11 +6,11 @@ RelayPin = "RelayPin"
 StartWaterning = "StartWaterning" 
 StopWatering = "StopWatering"
 
-pot1 = {PotName: "Carrots", SensorI2CPort: 4, SensorPin: 0, RelayI2CPort: 4, RelayPin: 3, StartWaterning: 60, StopWatering: 80}
-pot2 = {PotName: "Arugula", SensorI2CPort: 4, SensorPin: 1, RelayI2CPort: 4, RelayPin: 4, StartWaterning: 50, StopWatering: 75}
+pot1 = {PotName: "Carrots", SensorI2CPort: 4, SensorPin: 1, RelayI2CPort: 4, RelayPin: 3, StartWaterning: 60, StopWatering: 80}
+#pot2 = {PotName: "Arugula", SensorI2CPort: 4, SensorPin: 1, RelayI2CPort: 4, RelayPin: 4, StartWaterning: 50, StopWatering: 75}
 
 
-listOfPots = [pot1, pot2]
+listOfPots = [pot1]
 
 def toMoistureSensorParams(pot):
     return (pot[SensorI2CPort], pot[SensorPin])

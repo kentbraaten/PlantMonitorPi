@@ -1,7 +1,10 @@
+import traceback
+from os import path
 import podMonitor
 import pots
 import waterLogClient
 from time import sleep
+from timeUtils import num_seconds_to_next_time_delta
 import datetime
 
 
@@ -17,12 +20,23 @@ def logStart():
 
 
 def monitorPots():
-    sleep(find_time_delta_to_15())
-    while True:
-        podMonitor.waterPotsIfNeeded(getSettingsForPots())
-        sleep(find_time_delta_to_15())
+    sleep(num_seconds_to_next_time_delta(15))
+    try:
+        while True:
+            podMonitor.waterPotsIfNeeded(getSettingsForPots())
+            sleep(num_seconds_to_next_time_delta(15))
+    except Exception as e:
+        writeError(e)
+            
 
-    
+def writeError(e):
+    f = open("error.txt","a") if path.exists("error.txt") else open("error.txt","w")
+    with f:
+        f.write(e.__class__)
+        f.write("\n")
+        f.write(traceback.format_exc())
+
+
     
 def getSettingsForPots():
     try:
@@ -30,17 +44,6 @@ def getSettingsForPots():
     except:
         pass
     return settings
-
-
-
-def find_time_delta_to_15():
-    now = datetime.datetime.now()
-    seconds = 900 - ((now.minute * 60 + now.second) % 900)
-    if (seconds == 0):
-        return 900
-    else:
-        return seconds
-
 
 logStart()
 monitorPots()
