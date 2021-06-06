@@ -21,10 +21,16 @@ def monitorPots():
         try:
             podMonitor.waterPotsIfNeeded(getSettingsForPots())
         except Exception as e:
-            writeError(e)
-            waterLogClient.addSystemEvent(waterLogClient.ERROR_SYSTEM_EVENT)
+            reportError(e)
         sleep(num_seconds_to_next_time_delta(15))
         
+
+def reportError(e):
+    try:
+        writeError(e)
+        waterLogClient.addSystemEvent(waterLogClient.ERROR_SYSTEM_EVENT)
+    except:
+        pass
 
     
 def getSettingsForPots():
