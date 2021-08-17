@@ -16,13 +16,13 @@ def logStart():
 
 
 def monitorPots():
-    sleep(num_seconds_to_next_time_delta(15))
+    sleep(num_seconds_to_next_time_delta(30))
     while True:
         try:
             podMonitor.waterPotsIfNeeded(getSettingsForPots())
         except Exception as e:
             reportError(e)
-        sleep(num_seconds_to_next_time_delta(15))
+        sleep(num_seconds_to_next_time_delta(30))
         
 
 def reportError(e):
