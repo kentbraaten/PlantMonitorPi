@@ -90,31 +90,13 @@ def uploadSettings():
     pot1 = {
         "PotName": "green", 
         "SensorI2CPort": 4, 
-        "SensorPin": 1, 
+        "SensorPin": 2, 
         "RelayI2CPort": 4, 
         "RelayPin": 3, 
         "StartWaterning": 45, 
         "StopWatering": 70
      }
-    pot2 = {
-        "PotName": "red", 
-        "SensorI2CPort": 4, 
-        "SensorPin": 2, 
-        "RelayI2CPort": 4, 
-        "RelayPin": 4, 
-        "StartWaterning": 50, 
-        "StopWatering": 75
-    }
-    pot3 = {
-        "PotName": "blue", 
-        "SensorI2CPort": 4, 
-        "SensorPin": 3, 
-        "RelayI2CPort": 4, 
-        "RelayPin": 5, 
-        "StartWaterning": 50, 
-        "StopWatering": 75
-    }
-    return addSettings([pot1, pot2, pot3])
+    return addSettings([pot1])
 
 
 def _flatenPotArray(potArray, flatMap):

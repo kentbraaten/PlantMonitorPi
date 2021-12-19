@@ -23,6 +23,16 @@ def monitorPots():
         except Exception as e:
             reportError(e)
         sleep(num_seconds_to_next_time_delta(30))
+
+def logReadings():
+    sleep(num_seconds_to_next_time_delta(60))
+    while True:
+        try:
+            readings = podMonitor.getMoistureSensorReadings(getSettingsForPots());
+            logReadings(readings)
+        except Exception as e:
+            reportError(e)
+        sleep(num_seconds_to_next_time_delta(30))
         
 
 def reportError(e):
