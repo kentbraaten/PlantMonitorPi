@@ -20,6 +20,10 @@ def waterPotsIfNeeded(potsToWater):
             readings = getMoistureSensorReadings(potsToWater)
 
 
+def logSensorReadings(settingsForPots):
+    readings = getMoistureSensorReadings(settingsForPots);
+    logReadings(readings)
+
 def waterPots(potsToWater):
     for pot in potsToWater:
         turnOnValve(toRelayParams(pot))
