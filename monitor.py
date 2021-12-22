@@ -51,5 +51,5 @@ def getSettingsForPots():
     return settings
 
 logStart()
-monitorPots()
+logReadings()
 
