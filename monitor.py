@@ -32,7 +32,7 @@ def logReadings():
             podMonitor.logSensorReadings(getSettingsForPots())
         except Exception as e:
             reportError(e)
-        sleep(num_seconds_to_next_time_delta(30))
+        sleep(num_seconds_to_next_time_delta(60))
         
 
 def reportError(e):
