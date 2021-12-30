@@ -73,6 +73,11 @@ def getSettings():
         return None
 
 
+def getReadings():
+    response = requests.get(get_url("readings/all"))
+    return response.json()
+
+
 def getDateTime(d):
     return d["dateTime"]
 
