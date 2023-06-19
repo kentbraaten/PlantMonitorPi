@@ -4,7 +4,7 @@ from I2CFuncs import getSensorReading, turnOnValve
 from waterLogClient import addAction, addReading, normalizeReading, MOISTURE_SENSOR_READING_NORMALIZED, MOISTURE_SENSOR_READING_RAW
 
 
-maxCycles = 4
+maxCycles = 1
 
 def waterPotsIfNeeded(potsToWater):
     readings = getMoistureSensorReadings(potsToWater)
