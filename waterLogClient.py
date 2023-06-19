@@ -1,6 +1,7 @@
 import requests
 import json
 from datetime import datetime
+from pots import listOfPots
 
 MOISTURE_SENSOR_READING_RAW = "raw-msr"
 MOISTURE_SENSOR_READING_NORMALIZED = "nrm-msr"
@@ -92,16 +93,7 @@ def get_url(route):
 
 
 def uploadSettings():
-    pot1 = {
-        "PotName": "green", 
-        "SensorI2CPort": 4, 
-        "SensorPin": 2, 
-        "RelayI2CPort": 4, 
-        "RelayPin": 3, 
-        "StartWaterning": 45, 
-        "StopWatering": 70
-     }
-    return addSettings([pot1])
+    return addSettings(listOfPots)
 
 
 def _flatenPotArray(potArray, flatMap):
