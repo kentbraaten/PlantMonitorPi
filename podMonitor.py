@@ -31,7 +31,7 @@ def waterPots(potsToWater):
 
 
 def getMoistureSensorReadings(potsToWater):
-    return [(pot, getSensorReading(toMoistureSensorParams(pot)))
+    return [(pot, normalizeReading(getSensorReading(toMoistureSensorParams(pot))))
                     for pot in potsToWater]
 
 
