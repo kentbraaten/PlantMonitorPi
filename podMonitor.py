@@ -49,7 +49,7 @@ def getPotsThatNeedWatering(tuples, compareFunc):
 
 def isBelowLowerRange(readingTuple):
     range = toMoistureRange(readingTuple[0])
-    return normalizeReading(readingTuple[1]) < range[0]
+    return readingTuple[1] < range[0]
 
 
 def isBelowUpperRange(readingTuple):
