@@ -54,7 +54,7 @@ def isBelowLowerRange(readingTuple):
 
 def isBelowUpperRange(readingTuple):
     range = toMoistureRange(readingTuple[0])
-    return normalizeReading(readingTuple[1]) < range[1]
+    return readingTuple[1] < range[1]
 
 
 def logReadings(readings):
