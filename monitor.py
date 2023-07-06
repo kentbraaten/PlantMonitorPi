@@ -4,9 +4,6 @@ from time import sleep
 from utils import num_seconds_to_next_time_delta, writeError
 
 
-settings = []
-
-
 def logStart():
     try:
         waterLogClient.addSystemEvent(waterLogClient.START_SYSTEM_EVENT)
@@ -45,6 +42,7 @@ def reportError(e):
     
 def getSettingsForPots():
     try:
+        global settings 
         settings = waterLogClient.getSettings()
     except:
         pass
