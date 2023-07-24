@@ -69,7 +69,6 @@ def logReading(reading):
     sensorAddress = toMoistureSensorParams((reading[0]))
     rawReading = reading[1]
     addReading(sensorAddress,rawReading, MOISTURE_SENSOR_READING_RAW)
-    addReading(sensorAddress,normalizeReading(rawReading),MOISTURE_SENSOR_READING_NORMALIZED)
 
 
 
