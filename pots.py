@@ -6,9 +6,9 @@ RelayPin = "RelayPin"
 StartWaterning = "StartWaterning" 
 StopWatering = "StopWatering"
 
-pot1 = {PotName: "Roma-1", SensorI2CPort: 4, SensorPin: 1, RelayI2CPort: 4, RelayPin: 3, StartWaterning: 85, StopWatering: 90}
-pot2 = {PotName: "Roma-2", SensorI2CPort: 4, SensorPin: 2, RelayI2CPort: 4, RelayPin: 4, StartWaterning: 85, StopWatering: 90}
-pot3 = {PotName: "Roma-3", SensorI2CPort: 4, SensorPin: 3, RelayI2CPort: 4, RelayPin: 5, StartWaterning: 85, StopWatering: 90}
+pot1 = {PotName: "Roma-1", SensorI2CPort: 4, SensorPin: 1, RelayI2CPort: 4, RelayPin: 3, StartWaterning: 92, StopWatering: 98}
+pot2 = {PotName: "Roma-2", SensorI2CPort: 4, SensorPin: 2, RelayI2CPort: 4, RelayPin: 4, StartWaterning: 92, StopWatering: 98}
+pot3 = {PotName: "Roma-3", SensorI2CPort: 4, SensorPin: 3, RelayI2CPort: 4, RelayPin: 5, StartWaterning: 92, StopWatering: 98}
 
 
 

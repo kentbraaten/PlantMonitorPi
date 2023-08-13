@@ -48,6 +48,7 @@ def getSettingsForPots():
         pass
     return settings
 
+sleep(30)
 logStart()
 monitorPots()
 
