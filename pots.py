@@ -12,7 +12,8 @@ pot3 = {PotName: "Roma-3", SensorI2CPort: 4, SensorPin: 3, RelayI2CPort: 4, Rela
 
 
 
-listOfPots = [pot1, pot2, pot3]
+# listOfPots = [pot1, pot2, pot3]
+listOfPots = [pot1, pot2]
 
 def toMoistureSensorParams(pot):
     return (pot[SensorI2CPort], pot[SensorPin])
