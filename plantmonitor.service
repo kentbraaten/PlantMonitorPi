@@ -2,7 +2,7 @@
 Description=Monitor plants and water them when needed
 
 [Service]
-ExecStart=/usr/bin/python3 /home/pi/programs/pythonProjects/PlantMonitor/monitor.py
+ExecStart=/usr/bin/python3 /home/pi/programs/pythonProjects/PlantMonitorPi/monitor.py
 WorkingDirectory=/home/pi/programs/pythonPrograms/PlantMonitor
 
 [Install]
