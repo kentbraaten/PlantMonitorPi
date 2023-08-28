@@ -1,5 +1,7 @@
 [Unit]
 Description=Monitor plants and water them when needed
+Wants=network-online.target
+After=network-online.target
 
 [Service]
 ExecStart=/usr/bin/python3 /home/pi/programs/pythonProjects/PlantMonitorPi/monitor.py
