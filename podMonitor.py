@@ -49,6 +49,8 @@ def getPotsThatNeedWatering(tuples, compareFunc):
 
 def isBelowLowerRange(readingTuple):
     range = toMoistureRange(readingTuple[0])
+    if (readingTuple[1] < 0 or readingTuple[1] > 100):
+        return False
     return readingTuple[1] < range[0]
 
 
