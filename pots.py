@@ -6,14 +6,14 @@ RelayPin = "RelayPin"
 StartWaterning = "StartWaterning" 
 StopWatering = "StopWatering"
 
-pot1 = {PotName: "Roma-1", SensorI2CPort: 4, SensorPin: 1, RelayI2CPort: 4, RelayPin: 3, StartWaterning: 85, StopWatering: 98}
-pot2 = {PotName: "Roma-2", SensorI2CPort: 4, SensorPin: 1, RelayI2CPort: 4, RelayPin: 4, StartWaterning: 85, StopWatering: 98}
-pot3 = {PotName: "Roma-3", SensorI2CPort: 4, SensorPin: 1, RelayI2CPort: 4, RelayPin: 6, StartWaterning: 85, StopWatering: 98}
-pot4 = {PotName: "Basil-1", SensorI2CPort: 4, SensorPin: 2, RelayI2CPort: 4, RelayPin: 5, StartWaterning: 75, StopWatering: 98}
+pot1 = {PotName: "Roma-1", SensorI2CPort: 4, SensorPin: 1, RelayI2CPort: 4, RelayPin: 3, StartWaterning: 75, StopWatering: 98}
+pot2 = {PotName: "Roma-2", SensorI2CPort: 4, SensorPin: 1, RelayI2CPort: 4, RelayPin: 4, StartWaterning: 75, StopWatering: 98}
+pot3 = {PotName: "Roma-3", SensorI2CPort: 4, SensorPin: 1, RelayI2CPort: 4, RelayPin: 6, StartWaterning: 75, StopWatering: 98}
+pot4 = {PotName: "Peppers", SensorI2CPort: 4, SensorPin: 2, RelayI2CPort: 4, RelayPin: 5, StartWaterning: 70, StopWatering: 80}
 
 
 
-listOfPots = [pot1, pot2, pot3, pot4]
+listOfPots = [pot1, pot2, pot3]
 
 def toMoistureSensorParams(pot):
     return (pot[SensorI2CPort], pot[SensorPin])
