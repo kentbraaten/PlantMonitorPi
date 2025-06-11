@@ -8,8 +8,8 @@ StopWatering = "StopWatering"
 
 pot1 = {PotName: "Roma-1", SensorI2CPort: 4, SensorPin: 1, RelayI2CPort: 4, RelayPin: 3, StartWaterning: 75, StopWatering: 98}
 pot2 = {PotName: "Roma-2", SensorI2CPort: 4, SensorPin: 1, RelayI2CPort: 4, RelayPin: 4, StartWaterning: 75, StopWatering: 98}
-pot3 = {PotName: "Roma-3", SensorI2CPort: 4, SensorPin: 1, RelayI2CPort: 4, RelayPin: 6, StartWaterning: 75, StopWatering: 98}
-pot4 = {PotName: "Peppers", SensorI2CPort: 4, SensorPin: 2, RelayI2CPort: 4, RelayPin: 5, StartWaterning: 70, StopWatering: 80}
+pot3 = {PotName: "Roma-3", SensorI2CPort: 4, SensorPin: 1, RelayI2CPort: 4, RelayPin: 5, StartWaterning: 75, StopWatering: 98}
+pot4 = {PotName: "Peppers", SensorI2CPort: 4, SensorPin: 2, RelayI2CPort: 4, RelayPin: 6, StartWaterning: 70, StopWatering: 80}
 
 
 
